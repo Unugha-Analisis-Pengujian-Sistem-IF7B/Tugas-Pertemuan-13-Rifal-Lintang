@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
+import '../widgets/custom_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -11,7 +12,6 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final userCtrl = TextEditingController();
   final passCtrl = TextEditingController();
-  bool loading = false;
 
   void login() {
     if (userCtrl.text == 'admin' && passCtrl.text == '123456') {
@@ -31,17 +31,17 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Center(
         child: Card(
-          elevation: 6,
-          margin: const EdgeInsets.all(24),
+          elevation: 8,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(24),
           ),
+          margin: const EdgeInsets.all(24),
           child: Padding(
             padding: const EdgeInsets.all(24),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Icon(Icons.qr_code_2, size: 80),
+                const Icon(Icons.qr_code_2, size: 90),
                 const SizedBox(height: 16),
                 TextField(
                   controller: userCtrl,
@@ -54,12 +54,10 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: const InputDecoration(labelText: "Password"),
                 ),
                 const SizedBox(height: 20),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: loading ? null : login,
-                    child: const Text("LOGIN"),
-                  ),
+                CustomButton(
+                  text: "LOGIN",
+                  icon: Icons.login,
+                  onPressed: login,
                 ),
               ],
             ),

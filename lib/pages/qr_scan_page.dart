@@ -38,7 +38,7 @@ class _QRScanPageState extends State<QRScanPage> {
                     if (code != null) onScan(code);
                   },
                 ),
-                Container(color: Colors.black.withOpacity(0.4)),
+                Container(color: Colors.black.withValues(alpha: 0.4)),
                 Center(
                   child: Container(
                     width: 260,

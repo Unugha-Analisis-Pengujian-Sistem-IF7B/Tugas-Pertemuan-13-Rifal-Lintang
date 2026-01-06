@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.qr_code_2, size: 120, color: Colors.indigo),
+            const Icon(Icons.qr_code_2, size: 120, color: Colors.indigo),
             const SizedBox(height: 16),
             const Text(
               "Absensi Digital Guru",
